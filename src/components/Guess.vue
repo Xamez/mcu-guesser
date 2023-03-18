@@ -92,7 +92,7 @@ export default {
 			this.generateNewPersonToGuess()
 		},
 		callback(selected) {
-			if (selected === '') return; // guess is empty
+			if (selected === undefined || selected === '') return; // guess is empty
 			this.game.tries--
 			if (selected === this.game.personToGuess) { // guess is correct
 				this.game.winPopup = true
